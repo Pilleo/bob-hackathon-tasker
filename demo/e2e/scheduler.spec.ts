@@ -48,5 +48,8 @@ test('mobile view fits without horizontal scrolling', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Propose batch' })).toBeVisible()
   const width = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, viewport: innerWidth }))
   expect(width.scroll).toBeLessThanOrEqual(width.viewport)
+  const results = await page.locator('.results-panel').boundingBox()
+  const queue = await page.locator('.tasks-panel').boundingBox()
+  expect(results!.y).toBeLessThan(queue!.y)
   await page.screenshot({ path: '/tmp/bob-scheduler-demo-mobile.png', fullPage: true })
 })
