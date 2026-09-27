@@ -1,22 +1,16 @@
 # Bob Hackathon Tasker
 
-## Planner and scheduler
 
-The reusable Agent DevKit planner is included as `planner-core`, `planner`, `agent-acp`, and `planner-app`. IBM Bob built the independent `scheduler` module and its CLI integration. New issues require `target_files` in frontmatter; the scheduler uses those paths to avoid choosing issues that target the same files. `schedule --issues` proposes planning batches without ACP review; it does not execute tasks or certify an implementation-ready plan.
 
 Requires a JDK 25 toolchain (emits Java 21 bytecode). Run all foundation checks with:
 
 ```bash
 ./gradlew check
 ./gradlew :planner-app:installDist
-cd examples/name-validation
-PLANNER=../../planner-app/build/install/planner-app/bin/planner-app
-$PLANNER issue new --title "Reject blank names" --target src/main/kotlin/sample/Main.kt
-# Replace <printed-file> with the name printed by issue new:
-$PLANNER schedule --issues docs/internals/backlog/<printed-file>.md --capacity 2
+planner-app/build/install/planner-app/bin/planner-app issue new --title "Reject blank names"
 ```
 
-Fill in Context in the printed issue when ready. The required `target_files` are already recorded; add more paths there if needed. See [PLANNER.md](PLANNER.md) for elaboration and review commands, [ARCHITECTURE.md](ARCHITECTURE.md) for module boundaries, and [examples/name-validation](examples/name-validation) for a small sample project. An ACP profile example is in [examples/planner-profile.example.json](examples/planner-profile.example.json); substitute your local executable and authenticate it separately.
+Fill in Context and optional target files in the printed issue. See [PLANNER.md](PLANNER.md) for elaboration and review commands, [ARCHITECTURE.md](ARCHITECTURE.md) for module boundaries, and [examples/name-validation](examples/name-validation) for a small sample project. An ACP profile example is in [examples/planner-profile.example.json](examples/planner-profile.example.json); substitute your local executable and authenticate it separately.
 
 `EXPORT-MANIFEST.txt` records the source revision and hashes of the copied foundation, plus destination-specific changes. This is pre-existing foundation code; record new Bob work and its task-session screenshots in `bob_sessions/`. No credentials or machine-specific agent configuration are included.
 
