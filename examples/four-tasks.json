@@ -1,0 +1,6 @@
+[
+  { "id": "validation", "priority": 100, "state": "PENDING", "dependencyIds": [], "target_files": ["src/Validator.kt"] },
+  { "id": "message",    "priority": 90,  "state": "PENDING", "dependencyIds": [], "target_files": ["src/Validator.kt"] },
+  { "id": "docs",       "priority": 80,  "state": "PENDING", "dependencyIds": [], "target_files": ["docs/validation.md"] },
+  { "id": "tests",      "priority": 70,  "state": "PENDING", "dependencyIds": ["validation"], "target_files": ["src/ValidatorTest.kt"] }
+]

@@ -118,3 +118,13 @@ build/
 # DO NOT REMOVE ABOVE PATTERNS
 # Add project-specific patterns below
 # ============================================
+
+# Planner-specific local data and build output
+.gradle/
+.kotlin/
+**/build/
+.planner.json
+.codanna/
+
+# Required to build this project on another machine
+!gradle/wrapper/gradle-wrapper.jar

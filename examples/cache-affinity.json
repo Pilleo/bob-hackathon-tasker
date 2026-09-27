@@ -1,0 +1,14 @@
+{
+  "capacity": 2,
+  "affinityGroups": [
+    {
+      "id": "validator-cache",
+      "scopes": ["file:src/Validator.kt", "file:src/ValidatorTest.kt"]
+    }
+  ],
+  "tasks": [
+    { "id": "validator-fix",  "priority": 90, "state": "PENDING", "dependencyIds": [], "target_files": ["src/Validator.kt"] },
+    { "id": "feature-x",      "priority": 85, "state": "PENDING", "dependencyIds": [], "target_files": ["src/Feature.kt"] },
+    { "id": "validator-test", "priority": 70, "state": "PENDING", "dependencyIds": [], "target_files": ["src/ValidatorTest.kt"] }
+  ]
+}

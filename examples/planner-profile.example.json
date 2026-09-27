@@ -1,0 +1,11 @@
+{
+  "defaultReviewer": "example-acp",
+  "reviewers": {
+    "example-acp": {
+      "command": ["/absolute/path/to/acp-server", "--stdio"],
+      "readOnly": "BUBBLEWRAP",
+      "timeoutMs": 120000,
+      "maxOutputBytes": 256000
+    }
+  }
+}

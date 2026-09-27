@@ -89,3 +89,10 @@ id_dsa
 # ============================================
 # DO NOT REMOVE ABOVE PATTERNS
 # ============================================
+
+# Local planner profile and generated build/index files
+.planner.json
+.gradle/
+.kotlin/
+**/build/
+.codanna/
