@@ -21,7 +21,7 @@ To compare the TypeScript file-based selector with the Kotlin CLI, first build t
 
 Import `Pilleo/bob-hackathon-tasker` into Vercel with these project settings:
 
-Use the `interactive-demo` branch until these demo sources are merged into `main`.
+Use the default `main` branch; the demo sources are under `demo/`.
 
 | Setting | Value |
 | --- | --- |

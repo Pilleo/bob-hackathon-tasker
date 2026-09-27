@@ -5,7 +5,7 @@ import { scenarios } from './scenarios/index'
 import { selectBatch } from './scheduler/selectBatch'
 import type { Task, TaskState } from './scheduler/types'
 
-const sourceUrl = 'https://github.com/Pilleo/bob-hackathon-tasker/tree/interactive-demo/demo'
+const sourceUrl = 'https://github.com/Pilleo/bob-hackathon-tasker/tree/main/demo'
 
 function copyTasks(tasks: Task[]): Task[] {
   return tasks.map(task => ({ ...task, dependencyIds: [...task.dependencyIds], target_files: [...task.target_files] }))

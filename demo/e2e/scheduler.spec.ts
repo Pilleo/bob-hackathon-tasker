@@ -7,6 +7,7 @@ test('shows the real backlog with four selected tasks and specific skip reasons'
   await expect(page.getByTestId('selected-task')).toHaveCount(4)
   await expect(page.getByText('Already selected: Deduplicate normalized names in a batch')).toBeVisible()
   await expect(page.getByText('Waiting for Accept names from command-line arguments')).toBeVisible()
+  await expect(page.getByRole('link', { name: 'Source code ↗' })).toHaveAttribute('href', 'https://github.com/Pilleo/bob-hackathon-tasker/tree/main/demo')
   await page.screenshot({ path: '/tmp/bob-scheduler-demo-desktop.png', fullPage: true })
 })
 
